@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Entitities;
 
 namespace API.Data
+
 {
     public static class DbInitializer
     {
