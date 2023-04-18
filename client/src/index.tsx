@@ -7,6 +7,9 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { Router, RouterProvider } from 'react-router-dom';
+import { Route } from '@mui/icons-material';
+import { router } from './app/router/Router';
 
 
 const root = ReactDOM.createRoot(
@@ -14,7 +17,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

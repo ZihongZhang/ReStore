@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Product } from "../models/product";
-import Catalog from "../../features/catlog/catlog";
+import Catalog from "../../features/catalog/catalog";
 import { Container, CssBaseline, Typography, createTheme } from "@mui/material";
 import Header from "./Header";
 import { ThemeProvider } from "@emotion/react";
+import { Outlet } from "react-router-dom";
 
 
 
@@ -30,7 +31,7 @@ function App() {
     <CssBaseline />
      <Header darkMode={darkMode} changeMode={changeMode}/>
      <Container>
-      <Catalog />
+      <Outlet />
       </Container>
      
     </ThemeProvider>
