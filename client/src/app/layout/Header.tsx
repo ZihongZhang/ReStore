@@ -1,7 +1,6 @@
 import babel from "@babel/core";
 import { ShoppingCart } from "@mui/icons-material";
 import { AppBar, Badge, Box, IconButton, List, ListItem, Switch, Toolbar, Typography, iconButtonClasses } from "@mui/material";
-import path from "path";
 import { Dispatch, SetStateAction } from "react";
 import { NavLink } from "react-router-dom";
 const midLinks =[
@@ -18,9 +17,11 @@ const rightLink =[
 ]
 const navStyles={color:'inherit',
 typography:'h6',
+// Changes when the mouse is placed over it
 '&:hover':{
     color:'grey.500'
 },
+//Changes when the mouse has clicked on it 
 '&.active':{
     color:'text.secondary'
 },
@@ -41,12 +42,14 @@ export default function Header({darkMode,changeMode}:Props){
         <AppBar position="static" sx={{mb:4}}>
             <Toolbar sx={{display:'flex',justifyContent:"space-between",alignItems:'center'}}>
                 <Box display='flex' alignItems='center'>
+                    {/* when clicked the re-store go to the home page */}
                 <Typography variant='h6' component={NavLink} to='/'
                 sx={navStyles}
-                
                 >
                     RE-STORE    
                 </Typography>
+                {/* switch which can change to the darkMode */}
+
                 <Switch checked={darkMode} onChange={changeMode}/>
 
                 </Box>
@@ -63,8 +66,11 @@ export default function Header({darkMode,changeMode}:Props){
                     ))}
                     
                 </List>
+
+                
                 <Box display='flex' alignItems='center'>
                 <IconButton size='large'  edge='start' color="inherit" sx={{mr:2}}>
+                    {/* icon container */}
                     <Badge badgeContent='4' color="secondary">
                         <ShoppingCart/>
                     </Badge>

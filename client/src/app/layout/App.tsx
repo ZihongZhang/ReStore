@@ -5,6 +5,8 @@ import { Container, CssBaseline, Typography, createTheme } from "@mui/material";
 import Header from "./Header";
 import { ThemeProvider } from "@emotion/react";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -28,9 +30,13 @@ function App() {
   
   return (
     <ThemeProvider theme={theme}>
+    {/* use Mui css */}
+    <ToastContainer position="bottom-right"hideProgressBar theme="colored"/>
     <CssBaseline />
      <Header darkMode={darkMode} changeMode={changeMode}/>
+     {/* container centers your content horizontally */}
      <Container>
+      {/* use router to change the web page */}
       <Outlet />
       </Container>
      
