@@ -24,6 +24,7 @@ namespace API.Middleware
             _next = next;
             
         }
+        // must have this function
         public async Task InvokeAsync(HttpContext context) 
         {
            try
@@ -44,6 +45,7 @@ namespace API.Middleware
                 Detail=_env.IsDevelopment()?ex.StackTrace?.ToString():null,
                 Title=ex.Message
             };
+            //serialize json
             var options =new JsonSerializerOptions{PropertyNamingPolicy=JsonNamingPolicy.CamelCase};
             var json =JsonSerializer.Serialize(Response,options);
             await context.Response.WriteAsync(json);
