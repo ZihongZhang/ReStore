@@ -12,6 +12,13 @@ import { Route } from '@mui/icons-material';
 import { router } from './app/router/Router';
 import { StoreProvider } from './app/context/StoreContext';
 
+import { Provider } from 'react-redux';
+import { store } from './app/store/configureStore';
+import { fetchProductAsync } from './features/catalog/catlogSlice';
+
+// const store = configureStore();
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,9 +26,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* use react router */}
-    <StoreProvider>
-     <RouterProvider router={router} />
-    </StoreProvider>    
+    {/* <StoreProvider> */}
+      <Provider store={store}>
+      <RouterProvider router={router} />
+      </Provider>    
+    {/* </StoreProvider>     */}
   </React.StrictMode>
 );
 

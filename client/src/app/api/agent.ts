@@ -9,6 +9,7 @@ const sleep = ()=> new Promise(resolve => setTimeout(resolve,500));
 //this method need a / in the end
 
 axios.defaults.baseURL='http://localhost:5167/api/';
+//enable the client to use cookie
 axios.defaults.withCredentials =true;
 
 const responseBody=(response:AxiosResponse)=>response.data;

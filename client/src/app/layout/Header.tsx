@@ -4,6 +4,7 @@ import { AppBar, Badge, Box, IconButton, List, ListItem, Switch, Toolbar, Typogr
 import { Dispatch, SetStateAction } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useStoreContext } from "../context/StoreContext";
+import { useAppSelector } from "../store/configureStore";
 const midLinks =[
     {title:'catalog', path:'/catalog'},
     {title:'about', path:'/about'},
@@ -37,7 +38,8 @@ interface Props{
 }
 
 export default function Header({darkMode,changeMode}:Props){
-    const{basket}=useStoreContext();
+    // const{basket}=useStoreContext();
+    const{basket}=useAppSelector(state=>state.basket);
     const itemCount = basket?.items.reduce((sum,item)=>sum + item.quantity,0)
 
 
