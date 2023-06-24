@@ -68,6 +68,8 @@ export const basketSlice = createSlice({
             state.status ='idle';
             console.log(action.payload);
         });
+
+        
         builder.addCase(removeBasketItemAsyc.pending,(state,action)=>{
             state.status='pendingRemoveItem'+action.meta.arg.productId+action.meta.arg.name;
         });
